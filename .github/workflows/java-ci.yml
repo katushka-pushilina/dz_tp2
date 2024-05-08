@@ -5,21 +5,19 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:  # Позволяет запускать workflow вручную из GitHub UI.
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Определяет, что задача будет выполняться на последней версии Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  # Позволяет получить копию вашего репозитория на runner
-
+    - uses: actions/checkout@v3  
     - name: Set up JDK 11
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3 
       with:
-        java-version: '11'  # Устанавливает JDK версии 11
-        distribution: 'adopt'  # Использует AdoptOpenJDK
-
+        java-version: '11'
+        distribution: 'adopt'  
     - name: Build and Test
       run: |
         javac NumberAnalyzer.java
