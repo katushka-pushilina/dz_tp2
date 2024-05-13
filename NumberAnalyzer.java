@@ -4,7 +4,7 @@ import java.util.*;
 
 public class NumberAnalyzer {
     public static void main(String[] args) {
-        String filePath = "numbers.txt";  // Предполагаем, что файл называется numbers.txt и находится в том же каталоге
+        String filePath = "numbers.txt"; 
         try {
             List<Integer> numbers = readNumbersFromFile(filePath);
             System.out.println("Минимальное: " + _min(numbers));
