@@ -1,9 +1,10 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.*;
-import org.junit.*;
-
+import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.NoSuchElementException;
 
 public class NumberAnalyzerTest {
     @Test
@@ -26,9 +27,10 @@ public class NumberAnalyzerTest {
         assertEquals(24, NumberAnalyzer._mult(Arrays.asList(1, 4, 2, 3)));
     }
     
-    
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void testEmptyList() {
-        NumberAnalyzer._min(Collections.emptyList());
+        assertThrows(NoSuchElementException.class, () -> {
+            NumberAnalyzer._min(Collections.emptyList());
+        });
     }
 }
