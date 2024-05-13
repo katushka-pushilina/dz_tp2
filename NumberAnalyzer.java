@@ -7,12 +7,12 @@ public class NumberAnalyzer {
         String filePath = "numbers.txt"; 
         try {
             List<Integer> numbers = readNumbersFromFile(filePath);
-            System.out.println("Минимальное: " + _min(numbers));
-            System.out.println("Максимальное: " + _max(numbers));
-            System.out.println("Сумма: " + _sum(numbers));
-            System.out.println("Произведение: " + _mult(numbers));
+            System.out.println(_min(numbers));
+            System.out.println(_max(numbers));
+            System.out.println(_sum(numbers));
+            System.out.println(_mult(numbers));
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
