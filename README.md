@@ -1,5 +1,3 @@
-[![Build Status](https://github.com/katushka-pushilina/dz_tp2/actions/workflows/java-ci.yml/badge.svg)](https://github.com/katushka-pushilina/dz_tp2/actions)
-
 ![Java CI](https://github.com/katushka-pushilina/dz_tp2/actions/workflows/java-ci.yml/badge.svg)
 
 # Анализатор чисел из файла
