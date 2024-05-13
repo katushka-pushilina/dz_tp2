@@ -26,7 +26,7 @@ public class NumberAnalyzerTest {
         assertEquals(24, NumberAnalyzer._mult(Arrays.asList(1, 4, 2, 3)));
     }
     
-    // Новый тест: Проверка на пустой список
+    
     @Test(expected = NoSuchElementException.class)
     public void testEmptyList() {
         NumberAnalyzer._min(Collections.emptyList());
