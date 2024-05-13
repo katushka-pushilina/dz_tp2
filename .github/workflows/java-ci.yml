@@ -18,5 +18,22 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+
     - name: Build and Test with Maven
       run: mvn clean test
+
+    - name: Notify Telegram on Success
+      if: success()
+      run: |
+        curl -X POST \
+        https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
+        -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+        -d text="Success: GitHub Actions CI Workflow completed successfully. Check the build here: ${{ github.event.repository.html_url }}/actions"
+
+    - name: Notify Telegram on Failure
+      if: failure()
+      run: |
+        curl -X POST \
+        https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage \
+        -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+        -d text="Failure: GitHub Actions CI Workflow failed. Check the build here: ${{ github.event.repository.html_url }}/actions"
